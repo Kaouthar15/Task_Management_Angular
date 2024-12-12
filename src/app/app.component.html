@@ -1,18 +1,27 @@
-<app-header/>
-
+<app-header />
 <main>
   <ul id="users">
     <li>
-      <app-user [avatar]="users[0].avatar" [name]="users[0].name"/>
+      <app-user 
+      [avatar]="users[0].avatar" 
+      [name]="users[0].name"
+      (select)="onSelectUser(users[0].id)" />
     </li>
     <li>
-      <app-user [avatar]="users[1].avatar"  [name]="users[1].name"/>
+      <app-user 
+      [avatar]="users[1].avatar" 
+      [name]="users[1].name" />
     </li>
     <li>
-      <app-user [avatar]="users[2].avatar" [name]="users[2].name"/>
+      <app-user 
+      [avatar]="users[2].avatar" 
+      [name]="users[2].name" />
     </li>
     <li>
-      <app-user [avatar]="users[4].avatar"  [name]="users[4].name"/>
+      <app-user 
+      [avatar]="users[4].avatar" 
+      [name]="users[4].name" />
     </li>
   </ul>
+  <app-task/>
 </main>
