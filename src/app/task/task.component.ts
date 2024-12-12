@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
-import { find } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css'
 })
 export class TaskComponent {
 
+
+  @Input() selectedId!:string;
+  @Input() selectedName!:string; 
+
+  
   onSelectUser(){
-    return find
+    console.log("Selected user id: " + this.selectedId + " and name: " + this.selectedName);
   }
 }

@@ -1,27 +1,13 @@
 <app-header />
 <main>
-  <ul id="users">
-    <li>
+  <ul id="users" >
+    <li *ngFor="let user of users">
       <app-user 
-      [avatar]="users[0].avatar" 
-      [name]="users[0].name"
-      (select)="onSelectUser(users[0].id)" />
-    </li>
-    <li>
-      <app-user 
-      [avatar]="users[1].avatar" 
-      [name]="users[1].name" />
-    </li>
-    <li>
-      <app-user 
-      [avatar]="users[2].avatar" 
-      [name]="users[2].name" />
-    </li>
-    <li>
-      <app-user 
-      [avatar]="users[4].avatar" 
-      [name]="users[4].name" />
+      [avatar]="user.avatar" 
+      [name]="user.name"
+      [id]="user.id"
+      (select)="onSelectUser({id:user.id,name:user.name})" />
     </li>
   </ul>
-  <app-task/>
+  <app-task [selectedId]="selectedId" [selectedName]="selectedName" />
 </main>
