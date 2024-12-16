@@ -5,10 +5,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'app-task',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './task.component.html',
-  styleUrl: './task.component.css'
+  templateUrl: './tasks.component.html',
+  styleUrl: './tasks.component.css'
 })
-export class TaskComponent {
+export class TasksComponent {
 
 
   @Input() selectedId!:string;

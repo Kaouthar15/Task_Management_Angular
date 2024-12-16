@@ -1,0 +1,19 @@
+<section id="tasks">
+    <header *ngIf="selectedId; else noUserSelected">
+        <h2>{{selectedName}}'s Tasks</h2>
+        <menu>
+            <button>Add Task</button>
+        </menu>
+    </header>
+    <header>
+        <ng-template #noUserSelected>
+            <h2>No user Selected</h2>
+        </ng-template>
+    </header>
+    <ul>
+        <li>
+            <app-task/>
+        </li>
+    </ul>
+</section>
+
