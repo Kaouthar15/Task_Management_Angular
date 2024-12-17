@@ -47,6 +47,7 @@ export class TasksComponent {
   }
 
   onCompleteTask(id:string){
+    console.log("salam onCompleteTask");
     this.tasks = this.tasks.filter((e)=>id !== e.id);
   }
 }
