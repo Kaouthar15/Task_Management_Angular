@@ -3,6 +3,7 @@
   <ul id="users" >
     <li *ngFor="let user of users">
       <app-user 
+      [selected]="user.id === selectedId"
       [id]="user.id"
       [user]="user"
       (select)="onSelectUser({id:user.id,name:user.name})" />
@@ -10,5 +11,5 @@
   </ul>
 
 
-  <app-task [selectedId]="selectedId" [selectedName]="selectedName" />
+  <app-tasks [selectedId]="selectedId" [selectedName]="selectedName" />
 </main>
