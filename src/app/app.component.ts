@@ -15,17 +15,14 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'udemy_course';
   users = DUMMY_USERS;
-  
-
-
   selectedId!:string;
   selectedName!:string;
-
-
 
   onSelectUser(user: { id: string, name: string }){
     console.log('Selected user id with '+user.id + " the name is : "+user.name);
     this.selectedId = user.id;
     this.selectedName = user.name;
   }
+
+
 }
