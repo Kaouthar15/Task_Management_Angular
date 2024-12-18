@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component';
+import { NewTaskComponent } from "./new-task/new-task.component";
 
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [CommonModule,TaskComponent],
+  imports: [CommonModule, TaskComponent, NewTaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css'
 })
@@ -14,7 +15,7 @@ export class TasksComponent {
 
   @Input() selectedId!:string;
   @Input() selectedName!:string; 
-
+  isAddingTask:boolean = false;
   tasks = [
     {
       id : 't1',
@@ -47,7 +48,14 @@ export class TasksComponent {
   }
 
   onCompleteTask(id:string){
-    console.log("salam onCompleteTask");
     this.tasks = this.tasks.filter((e)=>id !== e.id);
+  }
+
+  onStartsAddTask(){
+    this.isAddingTask = true;
+  }
+
+  onCancelAddTask(){
+    this.isAddingTask = false;
   }
 }

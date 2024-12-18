@@ -1,8 +1,12 @@
+<div *ngIf="isAddingTask">
+  <app-new-task (cancel)="onCancelAddTask()"/>
+</div>
+
 <section id="task">
   <header *ngIf="selectedId; else noUserSelected">
     <h2>{{ selectedName }}'s Tasks</h2>
     <menu>
-      <button>Add Task</button>
+      <button (click)="onStartsAddTask()">Add Task</button>
     </menu>
   </header>
     <ng-template #noUserSelected>
