@@ -5,7 +5,7 @@ import { NewTaskComponent } from "./new-task/new-task.component";
 import { NewTaskData, Task } from './task/task.model';
 import { tasks } from '../dummy-tasks';
 import { EditTaskComponent } from './edit-task/edit-task.component';
-
+import { TasksService } from './tasks.service';
 @Component({
   selector: 'app-tasks',
   standalone: true,
@@ -14,6 +14,10 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
+
+
+  constructor(private tasksService: TasksService){
+  }
 
   @Input() selectedId!:string;
   @Input() selectedName!:string; 
@@ -31,7 +35,7 @@ export class TasksComponent {
     console.log("Selected user id: " + this.selectedId + " and name: " + this.selectedName);
   }
   get selectedUserTasks() {
-    return this.tasks.filter((e)=>this.selectedId === e.userId);
+    return this.tasksService.getUserTasks(this.selectedId);
   }
 
   onCompleteTask(id:string){
@@ -74,6 +78,4 @@ export class TasksComponent {
       this.isEditingTask = false; 
     }
   }
-
-
 }
