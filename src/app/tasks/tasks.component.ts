@@ -34,6 +34,7 @@ export class TasksComponent {
   onSelectUser(){
     console.log("Selected user id: " + this.selectedId + " and name: " + this.selectedName);
   }
+  
   get selectedUserTasks() {
     return this.tasksService.getUserTasks(this.selectedId);
   }
@@ -56,6 +57,7 @@ export class TasksComponent {
 
 
   onSubmitAddTask(taskData : NewTaskData){
+
     this.tasks.push({
       id : new Date().getTime().toString(),
       userId : this.selectedId,

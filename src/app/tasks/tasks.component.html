@@ -1,5 +1,5 @@
 <div *ngIf="isAddingTask">
-  <app-new-task (cancel)="onCancelAddTask()" (add)="onSubmitAddTask($event)" /> 
+  <app-new-task (close)="onCancelAddTask()" [userId]="selectedId" (add)="onSubmitAddTask($event)" /> 
 </div>
 <div *ngIf="isEditingTask">
   <app-edit-task  [task]="selectedTask" (edit)="onSubmitEditTask($event)" (cancel)="onCancelEditTask()"/>
